@@ -1,3 +1,5 @@
+# You must have Python3 and Pygame installed to run this game.
+#
 # 1 - Import library
 import random
 import pygame
@@ -39,13 +41,13 @@ clink = pygame.mixer.Sound('clink.wav')
 pygame.mixer.music.load('jack_j.mp3')
 pygame.mixer.music.play(-1)
 
-# 4 - keep looping through
+# 3 - keep looping through
 while 1:
     text = "[W]:Up \n[S]:Down \n[A]:Left \n[D]:Right \n[Space]:Throw Disc"
     game_rules = game_font.render("Try and get a disc in all five baskets to win!", 0, (255, 255, 255))
     for x in range(100):
         rand_disc = random.randint(0,4)
-    # 8 - loop through the events
+    # 4 - loop through the events
     for event in pygame.event.get():
         # check if the event is the X button 
         if event.type==pygame.QUIT:
@@ -76,7 +78,7 @@ while 1:
             elif event.key==pygame.K_d:
                 keys[3]=False
 
-    # # 9 - Move player
+    # # 5 - Move player
     if keys[0]:
         playerpos[1]-=8
     elif keys[2]:
